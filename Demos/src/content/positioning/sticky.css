@@ -1,0 +1,43 @@
+body {
+    background-color: #1f1f1f;
+    color: #bfbfbf;
+    height: 2000px;
+    width: 3000px;
+}
+
+h1 {
+    font-weight: normal;
+}
+
+em {
+    color: yellowgreen;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+}
+
+.blue-box {
+    background: lightblue;
+    position: sticky;
+    top: 25px;
+    left: 25px;
+}
+
+.green-box {
+    background: lightgreen;
+    position: sticky;
+    top: 100px;
+    left: 300px;
+}
+
+.container {
+    background: rgba(0, 0, 0, 0.4);
+    width: 200px;
+    height: 200px;
+}
+
+/*
+  More info: https://developer.mozilla.org/en-US/docs/Web/CSS/position
+*/
