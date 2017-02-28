@@ -20,6 +20,11 @@
       .span-1 {
         width: 30%;                 /* 90 / 300 = .3 */
         background-color: red;
+        /*
+          In really small resolution, the text oversize the container.
+          Other solution, it is to play with media queries and font-size.
+        */
+        word-wrap: break-word;
       }
 
       .span-2 {
@@ -40,7 +45,7 @@
       @media screen and (min-width: 600px) {
         img {
           width: 60%;
-          margin-left: 5%; 
+          margin-left: 5%;
         }
       }
     </style>
