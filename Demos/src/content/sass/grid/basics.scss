@@ -1,0 +1,24 @@
+@import 'init';
+
+$containerHeight: 20vh;
+$containerWidth: 90vw;
+
+
+.container {
+  margin: 2em;
+  display: grid; // inline-grid | subgrid
+  background-color: grey;
+}
+
+.item {
+  //width: $containerWidth; // Without value fits all row
+  height: $containerHeight;
+  padding: 2rem;
+  box-sizing: border-box;
+  border: 2px solid black;
+  background-color: pink;
+
+  pre {
+    color: black;
+  }
+}

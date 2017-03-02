@@ -1,0 +1,79 @@
+@import "init";
+@import "mixins";
+
+.container {
+  height: 80vh;
+  margin: 2em;
+  display: grid; // inline-grid | subgrid;
+  background-color: grey;
+  grid-template-columns: 40px 50px auto 50px 40px;
+  grid-template-rows: 25% 100px auto;
+  // We can name lines. That way leads us to semantic grid.
+  // grid-template-columns: [first-column] 40px [second-column] 50px [third-column] auto [fourth-column] 50px [fith-column] 40px;
+  // grid-template-rows: [first-row] 25% [second-row] 100px [third-row] auto;
+}
+
+
+// No matters the order of items on html. This way we are referencing a cell.
+// First row
+.item-a {
+  @include grid-item(yellow, 1, 2, 1, 2);
+}
+
+.item-b {
+  @include grid-item(pink,1, 2, 2, 3);
+}
+
+.item-c {
+  @include grid-item(red, 1, 2, 3, 4);
+}
+
+.item-d {
+  @include grid-item(orange, 1, 2, 4, 5);
+}
+
+.item-e {
+  @include grid-item(blue, 1, 2, 5, 6);
+}
+
+// Second row
+.item-f {
+  @include grid-item(darken(yellow, 15%), 2, 3, 1, 2);
+}
+
+.item-g {
+  @include grid-item(darken(pink, 15%),2, 3, 2, 3);
+}
+
+.item-h {
+  @include grid-item(darken(red, 15%), 2, 3, 3, 4);
+}
+
+.item-i {
+  @include grid-item(darken(orange, 15%), 2, 3, 4, 5);
+}
+
+.item-j {
+  @include grid-item(darken(blue, 15%), 2, 3, 5, 6);
+}
+
+// Third row
+.item-k {
+  @include grid-item(lighten(yellow, 15%), 3, 4, 1, 2);
+}
+
+.item-l {
+  @include grid-item(lighten(pink, 15%),3, 4, 2, 3);
+}
+
+.item-m {
+  @include grid-item(lighten(red, 15%), 3, 4, 3, 4);
+}
+
+.item-n {
+  @include grid-item(lighten(orange, 15%), 3, 4, 4, 5);
+}
+
+.item-o {
+  @include grid-item(lighten(blue, 15%), 3, 4, 5, 6);
+}

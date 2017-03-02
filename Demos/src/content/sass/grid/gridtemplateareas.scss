@@ -1,0 +1,39 @@
+@import "init";
+@import "mixins";
+
+// NOTE: This open us the possibility of a real semantic grid.
+// grid-area -> Can be used in two ways.
+//  1. For naming
+//  2. As shorthand: row start / column start row end / column end
+.item-a {
+  grid-area: header;
+  background-color: pink;
+}
+
+.item-b {
+  grid-area: main;
+  background-color: green;
+}
+
+.item-c {
+  grid-area: sidebar;
+  background-color: blue;
+}
+
+.item-d {
+  grid-area: footer;
+  background-color: yellow;
+}
+
+.container {
+  display: grid;
+  width: 100%;
+  height: 50vh;
+  grid-template-areas: "header header header header"
+                       "main main . sidebar"
+                       "footer footer footer footer";
+
+  grid-template-columns: 1fr 1fr 1fr 1fr; // Proportional calculated. Invalid values.
+  grid-template-rows: auto ;
+  @include grid-gap(5px, 5px);
+}

@@ -1,0 +1,57 @@
+@mixin grid-item($backgroundcolor, $startrow, $endrow, $startcolumn, $endcolumn) {
+  grid-column-start: $startcolumn;
+  grid-column-end: $endcolumn;
+  grid-row-start: $startrow;
+  grid-row-end: $endrow;
+
+  background-color: $backgroundcolor;
+  box-sizing: border-box;
+  border: 1px solid black;
+}
+
+@mixin grid-gap($rowgap:0px, $columngap:0px) {
+  grid-row-gap: $rowgap;
+  grid-column-gap: $columngap;
+}
+
+@mixin base-grid-definition {
+  display: grid;
+  width: 100vw;
+}
+
+@mixin grid-full-resolution {
+  @include base-grid-definition;
+  @include grid-gap(5px, 5px);
+
+  grid-template-areas: "header header header header"
+                       "regular articles articles info"
+                       "footer footer footer footer";
+
+  grid-template-columns: 1fr 1fr 1fr 1fr; // Proportional calculated. Invalid values.
+  grid-template-rows: 10vh auto 10vh;
+}
+
+@mixin grid-mediun-resolution {
+  @include base-grid-definition;
+  @include grid-gap(5px, 5px);
+
+  grid-template-areas: "header header header"
+                       "articles articles info"
+                       "regular regular regular"
+                       "footer footer footer";
+
+  grid-template-columns: 1fr 1fr 1fr; // Proportional calculated. Invalid values.
+  grid-template-rows: 10vh auto auto 10vh;
+}
+
+@mixin grid-small-resolution {
+  // TODO: Move to its own file. Create mixins for that.
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .container-item {
+    flex-grow: 1;
+  }
+}
